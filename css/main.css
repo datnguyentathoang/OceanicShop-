@@ -12,6 +12,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: whitesmoke;
     color: white;
+
 }
 
 .header-link {
@@ -169,7 +170,8 @@ body {
     height: 100%;
     background: linear-gradient(120deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0) 70%);
     transform: skewX(-25deg);
-    animation: shine-animation 2.5s linear forwards; 
+    animation: shine-animation 2.5s linear forwards;
+    z-index: 2; /* Đảm bảo hiệu ứng này không ảnh hưởng ảnh */
 }
 /* Animation cho ánh sáng */
 @keyframes shine-animation {
@@ -241,3 +243,92 @@ body {
     font-size: 20px;
     cursor: pointer;
 }
+
+
+ /* Khung chứa toàn bộ */
+.frame {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 31rem;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* Ảnh nền */
+.frame-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.slideshow-container {
+    flex: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-79%, -50%);
+    width: 100%;
+    height: 90%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 15px; 
+}
+
+.slideshow {
+    
+    display: flex;
+    width: 300%;
+    transition: transform 0.5 ease-in-out;
+}
+
+.slideshow-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    padding: 10px;
+    border-radius: 15px;
+
+}
+
+.active {
+    opacity: 1;
+}
+
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+.banner-text{
+    flex: 1;
+    position: absolute;
+    top: 19%;
+    left: 50%;
+}
+.banner-text h1{
+    font-size: 10vh;
+    color: white;
+    text-shadow: whitesmoke;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    font-family: 'Playfair Display', serif;
+    font-weight: 700; /* Đậm hơn */
+    font-style: italic; /* Nghiêng nếu muốn */
+}
+.banner-text h2{
+    color: orange;
+}
+.banner-text h3{
+    color:#e2e2e2;
+}
+
