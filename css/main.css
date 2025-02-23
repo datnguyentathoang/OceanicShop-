@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    font-family: 'proxima-nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: whitesmoke;
+    color: white;
+}
+
+.header-link {
+    line-height: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: black;
+    padding: 20px 117px 20px 117px;
+    position: relative;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.menu {
+    display: flex;
+    gap: 15px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+}
+
+.menu a:hover, .right-menu a:hover {
+    color: grey;
+}
+.marquee-container {
+    overflow: hidden; /* Chỉ giữ 1 dòng này */
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    white-space: nowrap;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 100vw; /* Sửa lại để không bị tràn */
+    height: 50px; /* Tăng chiều cao */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.marquee-text {
+    display: inline-block;
+    animation: marquee 8s linear infinite;
+    color: white;
+    font-weight: 550;
+    font-size: 16px;
+    line-height: 40px; 
+    padding: 0 10px;
+    white-space: nowrap; 
+}
+
+@keyframes marquee {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
+
+.right-menu {
+    display: flex;
+    gap: 15px;
+    font-size: 18px;
+    font-weight: 400;
+    padding-top: 6px;
+}
+
+/* Dropdown menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #222;
+    min-width: 150px;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+    background-color: #444;
+}
+
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.arrow {
+    margin-left: 5px;
+    font-size: 12px;
+}
+.right-menu a{
+    text-decoration: none;
+    font-weight: bold;
+    color: aliceblue;
+}
+.fa-brands{
+    font-size: 24px;
+}
+.fa-linkedin{
+    color: #0077b5;
+}
+.fa-github{
+    color: aliceblue;
+}
+/* Main heade*/
+.Main-Header {
+    width: 100%; 
+    margin: 0 auto; 
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    padding: 0 117px 0 117px; 
+    background-color: white;
+    height: 80px; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+}
+.logo {
+    flex: 0.5;  
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 250px; 
+}
+
+.logo img {
+ 
+    height: 100%; 
+    width: auto;  
+    object-fit: contain;
+}
+.shine {
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0) 70%);
+    transform: skewX(-25deg);
+    animation: shine-animation 2.5s linear forwards; 
+}
+/* Animation cho ánh sáng */
+@keyframes shine-animation {
+    0% {
+        left: -150%;
+    }
+    100% {
+        left: 150%;
+    }
+}
+
+
+.Main-Header .Main-menu {
+    flex: 2; 
+    display: flex;
+    justify-content: center;
+ 
+}
+
+.search_bar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.icon {
+    display: flex;
+    gap: 10px;
+}
+.Main-menu {
+    flex-grow: 2; 
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Tạo khoảng cách giữa các menu */
+}
+.Main-menu a{
+
+    color: black;
+    text-decoration: none;
+    margin-right: 40px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+.Main-menu a:hover{
+    color: #444;
+}
+.serch_bar input {
+    padding: 10px 15px 10px 40px;
+    border: 1px solid #a8a8a8;
+    height: 30px;
+    width: 304px;
+    border-radius: 8px;
+    background: url(https://cdn-icons-png.flaticon.com/512/622/622669.png) no-repeat 15px center;
+    background-size: 20px;
+    font-style: italic;
+    color: black;
+}
+.search_bar input::placeholder{
+    color: #444;
+    font-family: 'proxima-nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-style: italic;
+    opacity: 0.7;
+    cursor: pointer;
+}
+.search-icon {
+    position: absolute;
+    right: 15px;
+    color: gray;
+    font-size: 20px;
+    cursor: pointer;
+}
